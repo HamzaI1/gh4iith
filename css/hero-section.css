@@ -10,9 +10,25 @@
   position: relative;
 }
 
+/* Hero Content */
 .hero-content {
   max-width: 50%;
   z-index: 2;
+  opacity: 0; /* Start hidden */
+  transform: translateY(-50px); /* Start above the screen */
+  animation: dropIn 1s ease-out forwards; /* Drop-in animation */
+}
+
+/* Keyframes for Drop-in Animation */
+@keyframes dropIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px); /* Start from above */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at normal position */
+  }
 }
 
 .hero-title {
