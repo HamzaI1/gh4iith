@@ -27,10 +27,55 @@ body {
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-family: "Orbitron", sans-serif;
+  font-size: 2.8rem;
   font-weight: bold;
-  color: #fff;
+  color: #FF6F61; /* Coral */
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, #FF6F61, #FFC107, #4CAF50);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradient-shift 4s linear infinite;
+  text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.8);
+  background: linear-gradient(90deg, #ff0077, #00ffcc);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradient-flow 3s infinite alternate;
+  transform: perspective(500px) rotateX(15deg);
 }
+
+.logo span {
+  color: #FFC107;
+  text-shadow: 0px 5px 15px rgba(130, 130, 130, 0.8);
+}
+
+.logo:hover {
+  transform: scale(1.1) rotateY(10deg);
+  transition: transform 0.4s ease, text-shadow 0.4s ease;
+  text-shadow: 0px 10px 20px rgba(255, 111, 97, 0.9),
+               0px 15px 30px rgba(76, 175, 80, 0.6);
+}
+
+@keyframes gradient-flow {
+  0% { background-position: 0%; }
+  100% { background-position: 100%; }
+}
+
+/* Gradient Animation */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 .nav {
   display: flex;
@@ -75,4 +120,74 @@ body {
   opacity: 1;
   transform: scaleX(1);
   transform-origin: left;
+}
+
+/* Social Media Icons Container */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  color: #fff; /* Default icon color */
+  background: linear-gradient(45deg, #FF6F61, #4CAF50);
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Default State Animation */
+.social-icons a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(45deg, #FFC107, #FF6F61, #4CAF50);
+  transform: skewX(-45deg);
+  transition: all 0.4s ease-in-out;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+/* Hover Effects */
+.social-icons a:hover {
+  transform: scale(1.2); /* Icon grows slightly */
+  background: linear-gradient(45deg, #FFC107, #FF6F61); /* Glow effect */
+  box-shadow: 0 10px 30px rgba(255, 111, 97, 0.8),
+              0 15px 45px rgba(76, 175, 80, 0.6);
+}
+
+.social-icons a:hover::before {
+  left: 0; /* Reveals gradient animation */
+}
+
+/* Icon Color Shift on Hover */
+.social-icons a:hover i {
+  color: #1A1A1A; /* Contrasting dark icon color */
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(255, 111, 97, 0.6);
+  }
+}
+
+.social-icons a:hover {
+  animation: pulse 0.6s infinite;
 }
