@@ -1,0 +1,86 @@
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 20px; /* Adjust for spacing */
+  height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a, #232323);
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 50%;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 20px;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(145deg, #232323, #1a1a1a);
+  border-radius: 50px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.7), -6px -6px 12px rgba(0, 255, 255, 0.2);
+}
+
+.cta-button.alt {
+  background: linear-gradient(145deg, #1a1a1a, #292929);
+}
+
+.hero-graphic {
+  width: 40%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-graphic::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: 20%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.2), rgba(0, 0, 0, 0));
+  filter: blur(80px);
+  z-index: -1;
+  animation: float 5s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
