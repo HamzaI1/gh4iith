@@ -1,17 +1,3 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #121212;
-  color: #fff;
-  padding-top: 80px; /* Ensures content doesn't overlap the fixed header */
-}
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -191,3 +177,150 @@ body {
 .social-icons a:hover {
   animation: pulse 0.6s infinite;
 }
+
+
+/* Responsive Header Adjustments */
+@media screen and (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .logo {
+    font-size: 2.2rem; /* Adjust logo size for smaller screens */
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 8px 15px; /* Adjust padding for smaller links */
+    box-shadow: none; /* Simplify shadows for better mobile performance */
+  }
+
+  .nav-link:hover {
+    transform: none;
+    box-shadow: none;
+    background: #292929; /* Subtle hover effect for mobile */
+  }
+
+  .nav-link::before {
+    display: none; /* Disable the underline hover effect for mobile */
+  }
+
+  .social-icons {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px; /* Adjust spacing for smaller screens */
+  }
+
+  .social-icons a {
+    width: 35px;
+    height: 35px; /* Adjust icon size */
+    font-size: 1.3rem; /* Adjust icon font size */
+  }
+}
+
+/* Extra Small Screens */
+@media screen and (max-width: 480px) {
+  .logo {
+    font-size: 1.8rem;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .social-icons a {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Navigation for mobile */
+.nav {
+  display: flex;
+  gap: 20px;
+  transition: all 0.3s ease;
+}
+
+.nav.active {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 80px;
+  right: 0;
+  width: 70%;
+  height: calc(100vh - 80px);
+  background: #121212;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.nav-link {
+  padding: 10px 20px;
+  background: linear-gradient(145deg, #232323, #1a1a1a);
+  border-radius: 10px;
+}
+
+.nav-link:hover {
+  transform: translateY(-5px);
+}
+
+/* Hamburger Active State */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(7px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-7px);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav {
+    display: none; /* Hidden by default on small screens */
+  }
+
+  .nav.active {
+    display: flex;
+  }
+}
+
