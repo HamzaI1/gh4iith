@@ -20,28 +20,25 @@
   position: relative;
   text-transform: uppercase;
   letter-spacing: 3px;
-  background: linear-gradient(90deg, #FF6F61, #FFC107, #4CAF50);
+  background: linear-gradient(90deg, #ff00ff, #00ffff);
+  /* background: linear-gradient(90deg, #FF6F61, #FFC107, #4CAF50); */
   -webkit-background-clip: text;
   color: transparent;
   animation: gradient-shift 4s linear infinite;
   text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.8);
-  background: linear-gradient(90deg, #ff0077, #00ffcc);
+  /* background: linear-gradient(90deg, #ff0077, #00ffcc); */
   -webkit-background-clip: text;
   color: transparent;
   animation: gradient-flow 3s infinite alternate;
   transform: perspective(500px) rotateX(15deg);
-}
-
-.logo span {
-  color: #FFC107;
-  text-shadow: 0px 5px 15px rgba(130, 130, 130, 0.8);
+  cursor: pointer;
 }
 
 .logo:hover {
   transform: scale(1.1) rotateY(10deg);
   transition: transform 0.4s ease, text-shadow 0.4s ease;
-  text-shadow: 0px 10px 20px rgba(255, 111, 97, 0.9),
-               0px 15px 30px rgba(76, 175, 80, 0.6);
+  /* text-shadow: 0px 10px 20px rgba(255, 111, 97, 0.9), */
+               /* 0px 15px 30px rgba(76, 175, 80, 0.6); */
 }
 
 @keyframes gradient-flow {
@@ -121,8 +118,9 @@
   width: 40px;
   height: 40px;
   font-size: 1.5rem;
-  color: #fff; /* Default icon color */
-  background: linear-gradient(45deg, #FF6F61, #4CAF50);
+  color: #000000; /* Default icon color */
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  /* background: linear-gradient(45deg, #FF6F61, #4CAF50); */
   border-radius: 50%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease-in-out;
@@ -138,7 +136,8 @@
   left: -100%;
   width: 200%;
   height: 100%;
-  background: linear-gradient(45deg, #FFC107, #FF6F61, #4CAF50);
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  /* background: linear-gradient(45deg, #FFC107, #FF6F61, #4CAF50); */
   transform: skewX(-45deg);
   transition: all 0.4s ease-in-out;
   z-index: 1;
@@ -148,9 +147,10 @@
 /* Hover Effects */
 .social-icons a:hover {
   transform: scale(1.2); /* Icon grows slightly */
-  background: linear-gradient(45deg, #FFC107, #FF6F61); /* Glow effect */
-  box-shadow: 0 10px 30px rgba(255, 111, 97, 0.8),
-              0 15px 45px rgba(76, 175, 80, 0.6);
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  /* background: linear-gradient(45deg, #FFC107, #FF6F61);  */
+  box-shadow: 0 10px 30px #00ffffd1,
+              0 15px 45px #ff00ffda;
 }
 
 .social-icons a:hover::before {
